@@ -1,0 +1,33 @@
+CREATE TABLE Employee(
+id int AUTO_INCREMENT PRIMARY KEY, 
+name VARCHAR(250), 
+post VARCHAR(50),  
+address VARCHAR(10)
+);
+
+
+INSERT INTO employee(name,post,address) VALUES ('Harry','Manager','New York');
+
+
+ALTER TABLE Employee ADD Salary decimal;
+
+ALTER TABLE Employee DROP Salary;
+
+CREATE TABLE Department(
+depid int PRIMARY KEY AUTO_INCREMENT,
+depName VARCHAR(250),
+depAddress VARCHAR(250),
+depPhone VARCHAR(200)
+);
+
+CREATE TABLE Person(
+ID int PRIMARY KEY AUTO_INCREMENT,
+Name VARCHAR(20) NOT NULL,
+Address VARCHAR(20) NOT NULL,
+Phone VARCHAR(20),
+Post VARCHAR(50) DEFAULT 'Member'
+);
+
+INSERT INTO Person(Name,Address,Phone) VALUES ('Harry','New York','8945454');
+
+ALTER TABLE Employee ADD Foreign Key(id) references Department(depid);
